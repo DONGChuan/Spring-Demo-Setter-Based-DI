@@ -1,10 +1,13 @@
 package com.dong.demo.utils;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
+import java.io.BufferedOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.stream.Stream;
 
 /**
@@ -19,6 +22,11 @@ public class XmlOutputHelper implements IOutputHelper {
     public void generateInfo(Object object) {
 
         XStream xstream = new XStream(new StaxDriver());
+
+        // Enable pretty xml output
+        BufferedOutputStream stdout = new BufferedOutputStream(System.out);
+        xstream.marshal(object, new PrettyPrintWriter(new OutputStreamWriter(stdout)));
+
         String xml = xstream.toXML(object);
 
         try {

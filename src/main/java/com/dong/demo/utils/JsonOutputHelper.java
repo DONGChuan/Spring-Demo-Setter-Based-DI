@@ -17,7 +17,9 @@ public class JsonOutputHelper implements IOutputHelper {
      */
     public void generateInfo(Object object) {
 
+        // // Enable pretty json output
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
         String json = gson.toJson(object);
 
         try {
