@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <bean id="jsonOutput" class="com.dong.demo.utils.JsonOutputHelper"/>
+    <bean id="xmlOutput" class="com.dong.demo.utils.XmlOutputHelper"/>
+
+    <bean id="employeeDONG" class="com.dong.demo.model.Employee">
+        <property name="name" value="DONG Chuan"/>
+        <property name="age" value="26"/>
+        <property name="department" value="IT"/>
+        <property name="iOutputHelper" ref="jsonOutput"/>
+    </bean>
+
+    <bean id="employeeLI" class="com.dong.demo.model.Employee">
+        <property name="name" value="LI Hua"/>
+        <property name="age" value="30"/>
+        <property name="department" value="RH"/>
+        <property name="iOutputHelper" ref="xmlOutput"/>
+    </bean>
+
+</beans>
