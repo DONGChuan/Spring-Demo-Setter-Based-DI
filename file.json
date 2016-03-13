@@ -1,1 +1,6 @@
-{"name":"DONG Chuan","age":26,"department":"IT","iOutputHelper":{}}
+{
+  "name": "DONG Chuan",
+  "age": 26,
+  "department": "IT",
+  "iOutputHelper": {}
+}

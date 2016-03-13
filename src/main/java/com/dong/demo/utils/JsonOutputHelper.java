@@ -1,6 +1,7 @@
 package com.dong.demo.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class JsonOutputHelper implements IOutputHelper {
      */
     public void generateInfo(Object object) {
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(object);
 
         try {
